@@ -16,66 +16,82 @@ format:
 
 ## {background-image="cogs.jpg"}
 
+```{r}
+#| echo: false
+get_pic <- function(id, alt, width) {
+  info <- httr::GET(
+    paste0("https://api.pexels.com/v1/photos/", id),
+    httr::add_headers(Authorization = Sys.getenv("PEXELS_KEY"))
+  ) |>
+    httr::content()
+  download.file(info$src$large, paste0(id, ".jpeg"))
+  cat("```{=html}\n")
+  cat(glue::glue(
+    '<div style="display:grid; margin-top: 3rem;"><figure>
+    <img src="{id}.jpeg"
+         alt="{alt}" width="{width}"/> <figcaption>
+            <p>Picture by <a href="{info$url}">{info$photographer} on Pexels</a>.</p>
+        </figcaption>
+</figure></div>'
+  ))
+  cat("\n```\n")
+}
+```
 ::: r-fit-text
 ::: {style="font-size:2.5em; padding: 0.5em 1em; background-color: rgba(255, 255, 255, .8);"}
-¡Código Hermoso, porque lo valemos!!
+¡Código hermoso, <br/>porque lo valemos!
 :::
 :::
-
 
 ::: {.absolute left="5%" bottom="5%"  style="font-size:1.2em; padding: 0.5em 1em; background-color: rgba(255, 255, 255, .8);"}
-Maëlle Salmon
+Maëlle Salmón
 
 <https://rome-git.netlify.app/>
 :::
 
 ::: {.notes}
-Cogs https://www.pexels.com/photo/colorful-toothed-wheels-171198/
+Cogs <https://www.pexels.com/photo/colorful-toothed-wheels-171198/>
 :::
 
-## Why write beautiful code
+## Por qué escribir código hermoso
 
-Easy-to-read, easy-to-follow code.
+. . .
 
-Your code is executed by machines, but read by humans who will check and build upon it.
+Código fácil de leer y de seguir.
 
-```{r mascara}
-#| results: "asis"
-#| cache: true
-#| echo: false
-get_pic(id = 3373745, alt = "Mascara", 300)
-```
+. . .
 
-## Well-proportioned code
+Tu código es ejecutado por máquinas, pero leído por humanos que lo comprobarán y construirán sobre él.
+
+## Código bien proporcionado
 
 ::: {.incremental}
 
-- Regular spacing between elements
+- Espaciado regular entre elementos
 
-- Not too wide
+- No demasiado ancho
 
-- Not too long: paragraphs, existing and home-made functions
+- No demasiado largo: párrafos, funciones que existan o que creaste
 
-- Not too stained: just the right amount of comments
+- No demasiado manchado: la cantidad justa de comentarios
 
 :::
 
-## Regular spacing
+## Espaciado regular
 
 :scream:
 
 ```{r, eval=FALSE, echo=TRUE}
-starwars %>%
-  select(name, height, mass, homeworld) %>%
+starwars%>%
+  select(name,height, mass,homeworld) %>%
   mutate(
-    mass = NULL,
-    height = height * 0.0328084 # convert to feet
+    mass= NULL,
+    height =height *0.0328084 # convert to feet
   )
-
 
 ```
 
-## Regular spacing
+## Espaciado regular
 
 :relieved:
 
@@ -89,99 +105,131 @@ starwars %>%
 
 ```
 
-## Regular spacing
+## Espaciado regular
 
-Follow rules, always the same rules, the same rules as your friends. Example: <https://style.tidyverse.org/> How do you do it?
+Sigue las normas, siempre las mismas normas, las mismas que tus amigos. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo haces?
 
 ::: {.incremental}
 
-- You get used to it.
+- Te acostumbras.
 
-- The package {styler} does it automatically! Demo.
-
-- In RStudio IDE, Ctrl+I for indentation.
+- La herramienta Air!
 
 :::
 
-## Not too wide
+## [Air](https://posit-dev.github.io/air/)
 
-No more than 80 characters per line, or something similar.
+Una herramienta externa programada en Rust por Lionel Henry y Davis Vaughan.
 
-lintr can warn you! Demo
+. . .
 
-Also an RStudio setting (Code > Display > Show Margin).
+Se usa en Positron o RStudio IDE o la CLI o en GitHub Actions o...
 
-## Code that's not too long: paragraphs
+## Demo de Air en Positron {.center}
 
-As in prose, one paragraph for one idea.
+:blue_heart: Arreglar cuando guardas el archivo.
+
+<https://posit-dev.github.io/air/editor-vscode.html>
+
+## Demo de Air en RStudio {.center}
+
+:blue_heart: Arreglar cuando guardas el archivo.
+
+<https://posit-dev.github.io/air/editor-rstudio.html>
+
+
+## Air en GitHub Actions {.center}
+
+:blue_heart: Sugerencias en PRs.                                                
+<https://www.tidyverse.org/blog/2025/06/air-0-7-0/#github-action>
+
+## No demasiado ancha
+
+No más de 80 caracteres por línea, o algo similar.
+
+:::{.incremental}
+
+- Air ayuda
+- Ajuste de Positron (`"editor.rulers": [80]` en `settings.json`)
+- Ajuste de RStudio (Code > Show > Show Margin).
+
+:::
+
+## Código no demasiado largo: párrafos
+
+Como en la prosa, un párrafo para una idea.
 
 ```{r, eval=FALSE, echo=TRUE}
-head <- collect_metadata(website)
-head_string <- stringify(head)
+cabeza <- obtener_metadatos(sitio)
+cabeza_texto <- textea(cabeza)
 
-body <- create_content(website)
-body_string <- stringify(body)
+cuerpo <- arma_contenido(sitio)
+cuerpo_texto <- textea(cuerpo)
 ```
 
-## Code that's not too long: homemade functions
+## Código no demasiado largo: funciones
 
-Keep the main function body not too long by outsourcing things to well-named functions.
+Mantén el cuerpo de la función principal no demasiado largo subcontratando cosas a funciones bien nombradas.
 
 ```{r, eval=FALSE, echo=TRUE}
-create_content <- function(website) {
-  title <- create_title(website)
-  page <- create_page(website)
-  combine_elements(title = title, page = page)
+arma_contenido <- function(sitio) {
+  titulo <- crea_titulo(sitio)
+  pagina <- crea_pagina(sitio)
+  combina_elementos(titulo = titulo, pagina = pagina)
 }
 
 ```
 
-## Aside: navigating between functions in RStudio IDE
+## Aparte: navegar entre funciones en el IDE de RStudio
 
-Demo!
+Demostración
 
-- Enter + click
+- Entrar + clic
 
-- Search bar
+- Barra de búsqueda
 
-## Code that's not too long: don't reinvent the wheel!
 
-For example: `modifyList()`
+## Aparte: navegar entre funciones en Positron
 
-```{r, echo=TRUE}
-default_values <- list(a = 1, b = 2)
-options <- list(b = 56)
-temporary_list <- default_values
-temporary_list[names(options)] <- options
-options <- temporary_list
+Demostración
 
-options
-```
+- Entrar + clic
 
-## Code that's not too long: don't reinvent the wheel!
+- Barra de búsqueda
 
-Here's an example: `modifyList()`
+## Código no demasiado largo: ¡no reinventes la rueda!
+
+Por ejemplo `setdiff()`
 
 ```{r, echo=TRUE}
-default_values <- list(a = 1, b = 2)
-options <- list(b = 56)
-options <- modifyList(default_values, options)
-options
+vector1 <- c("a", "b", "c")
+vector2 <- c("b", "c")
+vector1[!(vector1 %in% vector2)]
 ```
 
-## How to extend your R vocabulary
+## Código no demasiado largo: ¡no reinventes la rueda!
+
+Por ejemplo: `setdiff()`
+
+```{r, echo=TRUE}
+vector1 <- c("a", "b", "c")
+vector2 <- c("b", "c")
+setdiff(vector1, vector2)
+```
+
+## Cómo ampliar tu vocabulario de R
 
 ::: {.incremental}
 
-- Read other people's code ;
-- Ask others to read your code;
-- Share your learnings! [https://masalmon.eu/tags/useful-functions/](https://masalmon.eu/tags/useful-functions/)
+- Lee el código de otras personas ;
+- Pide a otros que lean tu código;
+- ¡Comparte tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
 
 :::
 
-## As few comments as possible
+## Tan pocos comentarios como sea posible
 
-I used to think...
+Antes pensaba...
 
 ```{r, eval=FALSE, echo=TRUE}
 # starwars data
@@ -191,30 +239,30 @@ starwars %>%
   mutate(
     # add mass2 as double of mass
     mass2 = mass * 2,
-    # add mass2_squareed as squared mass2
+    # add mass2_squared as squared mass2
     mass2_squared = mass2 * mass2
   )
 ```
 
-It's pointless and boring to write, and it can even be dangerous!
+Es inútil y aburrido escribir, ¡e incluso puede ser peligroso!
 
-## As few comments as possible
+## El menor número posible de comentarios
 
-One comment = like an alert!
+Un comentario = ¡como una alerta!
 
-If there are too many, we stop reading them.
+Si hay demasiados, dejamos de leerlos.
 
-## Feel the urge to add a comment? Take care!
+## ¿Comentario o no?
 
 ::: {.incremental}
 
-- Change the name of a variable rather than comment on what it is.
+- Cambia el nombre de una variable en lugar de comentar lo que es.
 
-- Change the structure of complicated code rather than comment on what it does.
+- Cambia la estructura de un código complicado en lugar de comentar lo que hace.
 
 :::
 
-## Explanatory variables or functions
+## Variables o funciones explicativas
 
 Meh:
 
@@ -225,9 +273,9 @@ if (!is.na(x) && nzchar(x)) {
 }
 ```
 
-## Explanatory variables or functions
+## Variables o funciones explicativas
 
-Yippee:
+Yupi
 
 ```{r, eval=FALSE, echo=TRUE}
 x_is_not_empty_string <- (!is.na(x) && nzchar(x))
@@ -236,59 +284,59 @@ if (x_is_not_empty_string) {
 }
 ```
 
-Possible to define a *function* rather than a variable, if needed.
+Es posible definir un *función* en lugar de una variable, si es necesario.
 
-## Good comments
-
-::: {.incremental}
-
-- Documenting functions with roxygen2 ;
-
-- Things you'd like to point out to a code reviewer, such as `# This query can not be done via GraphQL, so have to use v3 REST API`
-
-- Comments that provide a table of contents. Demo.
-
-:::
-
-## Well-proportioned code
-
-- Even spacing between elements
-
-- Not too wide
-
-- Not too long: paragraphs, existing and home-made functions
-
-- Not too stained: just the right amount of comments
-
-## Clear code
+## Buenos comentarios
 
 ::: {.incremental}
 
-- Self-explanatory names.
+- Documentar funciones con roxygen2 (y [devtag](https://github.com/moodymudskipper/devtag));
 
-- Logic tips: early `return()`, `switch()`.
+- Cosas que te gustaría señalar a un revisor de código, como por ejemplo `# This query can not be done via GraphQL, so have to use v3 REST API`
 
-- Less code.
+- Comentarios que proporcionen un índice. Demostración.
 
 :::
 
-## Self-explanatory names
+## Código bien proporcionado
+
+- Espaciado uniforme entre elementos
+
+- No demasiado ancho
+
+- No demasiado largo: párrafos, funciones existentes y caseras
+
+- No demasiado manchado: la cantidad justa de comentarios
+
+## Código claro
 
 ::: {.incremental}
 
-- Follow fashion.
+- Nombres autoexplicativos.
 
-- Felienne Hermans advises choosing the concepts that go into the name, the words to say it, then putting them together.
+- Consejos de lógica: temprano `return()`, `switch()`.
 
-- "The greater the distance between a name’s declaration and its uses, the longer the name should be" (Andrew Gerrand).
-
-- It's clear if the person reviewing your code agrees. :wink:
+- Menos código.
 
 :::
 
-## Renaming functions
+## Nombres autoexplicativos
 
-You can even rename existing functions if that clarifies things.
+::: {.incremental}
+
+- Sigue la moda.
+
+- Felienne Hermans aconseja elegir los conceptos que van en el nombre, las palabras para decirlo, y luego juntarlos.
+
+- "Cuanto mayor sea la distancia entre la declaración de un nombre y sus usos, más largo debe ser el nombre" (Andrew Gerrand).
+
+- Está claro si la persona que revisa tu código está de acuerdo :wink:
+
+:::
+
+## Renombrar funciones
+
+Incluso puedes cambiar el nombre de las funciones existentes si eso aclara las cosas.
 
 ```{r, eval=FALSE, echo=TRUE}
 # In utils.R
@@ -300,7 +348,7 @@ remove_extension <- function(path) {
 remove_extension(path)
 ```
 
-## Simplify logic: early `return()`
+## Simplificar la lógica: temprano `return()`
 
 Meh
 
@@ -314,9 +362,9 @@ do_thing <- function(x) {
 }
 ```
 
-## Simplifying logic: early `return()`
+## Lógica simplificadora: temprano `return()`
 
-Better!
+¡Mejor!
 
 ```{r, eval=FALSE, echo=TRUE}
 do_thing <- function(x) {
@@ -328,7 +376,7 @@ do_thing <- function(x) {
 }
 ```
 
-## Simplifying logic: `switch()`
+## Simplificando la lógica: `switch()`
 
 Meh
 
@@ -342,85 +390,96 @@ if (type == "mean") {
 }
 ```
 
-## Simplifying logic: `switch()`
+## Lógica simplificadora: `switch()`
 
-Better!
+¡Mejor!
 
 ```{r, eval=FALSE, echo=TRUE}
-switch(type, mean = mean(x), median = median(x), trimmed = mean(x, trim = .1))
+switch(
+    type, 
+    mean = mean(x), 
+    median = median(x), 
+    trimmed = mean(x, trim = .1)
+)
 ```
 
-You can even specify a default value (or error!) for other values of the first argument.
+Incluso puedes especificar un valor por defecto (¡o error!) para otros valores del primer argumento.
 
-## Less code, fewer problems!
+## ¡Menos código, menos problemas!
 
-- Be strict about what scope.
+- Sé estricto con el alcance.
 
-- Use trusted external dependencies.
+- Utiliza dependencias externas de confianza.
 
-## Clear code
+## Código claro
 
-- Self-explanatory names.
+- Nombres autoexplicativos.
 
-- Logic tips: `return()` early, `switch()`.
+- Consejos de lógica: `return()` pronto, `switch()`.
 
-- Less code.
+- Menos código.
 
-## How can you improve your code?
+## ¿Cómo puedes mejorar tu código?
 
 ::: {.incremental}
 
-- Spring cleaning ;
+- Limpieza de primavera ;
 
-- lintr ;
+- [lintr](https://lintr.r-lib.org/) y [flir](https://flir.etiennebacher.com/) ;
 
-- Human review.
+- Revisión humana.
 
 :::
 
-## Spring cleaning
+## Limpieza de primavera
 
-- Once a year? [https://www.tidyverse.org/blog/2023/06/spring-cleaning-2023/](https://www.tidyverse.org/blog/2023/06/spring-cleaning-2023/)
+- ¿Una vez al año? <https://www.tidyverse.org/blog/2023/06/spring-cleaning-2023/>
 
-- More regularly?
+- ¿Más regularmente?
 
-- Make a little improvement every time we add a new feature?
+- ¿Hacer una pequeña mejora cada vez que añadimos una nueva función?
 
-## lintr, a fantastic package
+## lintr, un paquete fantástico
 
-Let's take a look at the documentation!
+¡Echemos un vistazo a la documentación!
 
-[https://lintr.r-lib.org/reference/index.html](https://lintr.r-lib.org/reference/index.html)
+<https://lintr.r-lib.org/reference/index.html>
 
-## Human review
+## flir, otro paquete fantástico
 
-Read your colleagues' code and vice versa! [https://code-review.tidyverse.org/](https://code-review.tidyverse.org/)
+¡Puede hacer cambios!
 
-Peer review of packages at rOpenSci [https://ropensci.org/software-review/](https://ropensci.org/software-review/)
+<https://flir.etiennebacher.com/>
 
-## Conclusion
+## Revisión humana
 
-The beauty and clarity of code are as important as its performance.
+¡Lee el código de tus colegas y viceversa! <https://code-review.tidyverse.org/> + <https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1>
 
-Easier to check and maintain!
+Revisión por pares de paquetes en rOpenSci <https://ropensci.org/software-review/>
 
-Need for upkeep, maintenance.
+## Conclusión
 
-## References / additional resources
+La belleza y la claridad del código son tan importantes como su rendimiento.
 
-- Jenny Bryan's talk [Code Smells and Feels](https://github.com/jennybc/code-smells-and-feels)
+Más fácil de comprobar y mantener.
 
-- Book [The Art of Readable Code](https://www.oreilly.com/library/view/the-art-of/9781449318482/) by Dustin Boswell and Trevor Foucher
+Necesidad de mantenimiento del código y de tus conocimientos.
 
-- Book [Tidy Design by Hadley Wickham, in progress, with associated newsletter](https://tidydesign.substack.com/)
+## Referencias / recursos adicionales
 
-- Book [A Philosophy of Software Design by John Ousterhout](https://masalmon.eu/2023/10/19/reading-notes-philosophy-software-design/)
+- Charla de Jenny Bryan [Code feels, code smells](https://github.com/jennybc/code-smells-and-feels)
 
-## Thanks a lot!
+- Libro [The Art of Readable Code](https://www.oreilly.com/library/view/the-art-of/9781449318482/) de Dustin Boswell y Trevor Foucher
 
-To all of you and to Yani!
+- Libro [Tidy Design de Hadley Wickham](https://design.tidyverse.org/)
 
-[https://stylish-code.netlify.app/](https://stylish-code.netlify.app/)
+- Libro [A philosophy of software design por John Ousterhout](https://masalmon.eu/2023/10/19/reading-notes-philosophy-software-design/)
+
+## ¡Muchas gracias!
+
+¡A tod@s vosotr@s y a Yani!
+
+<https://stylish-code.netlify.app/>
 
 ```{r merci}
 #| results: "asis"
