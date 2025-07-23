@@ -300,7 +300,7 @@ Es posible definir un *función* en lugar de una variable, si es necesario.
 
 - No demasiado ancho
 
-- No demasiado largo: párrafos, funciones existentes y caseras
+- No demasiado largo: párrafos, funciones externas o internas
 
 - No demasiado manchado: la cantidad justa de comentarios
 
