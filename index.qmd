@@ -55,13 +55,9 @@ Cogs <https://www.pexels.com/photo/colorful-toothed-wheels-171198/>
 
 ## Por qué escribir código hermoso
 
-. . .
+> **Teorema fundamental de la legibilidad**: "El código debe escribirse de manera que se minimice el tiempo que le llevaría a otra persona entenderlo."
 
-Código fácil de leer y de seguir.
-
-. . .
-
-Tu código es ejecutado por máquinas, pero leído por humanos que lo comprobarán y construirán sobre él.
+(Traducido) The Art of Readable Code, Dustin Boswell y Trevor Foucher.
 
 ## Código bien proporcionado
 
