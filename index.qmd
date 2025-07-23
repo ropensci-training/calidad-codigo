@@ -449,15 +449,21 @@ Incluso puedes especificar un valor por defecto (¡o error!) para otros valores 
 
 ## Revisión humana
 
+. . .
+
 ¡Lee el código de tus colegas y viceversa! <https://code-review.tidyverse.org/> + <https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1>
+
+. . .
 
 Revisión por pares de paquetes en rOpenSci <https://ropensci.org/software-review/>
 
 ## Conclusión
 
-La belleza y la claridad del código son tan importantes como su rendimiento.
+> **Teorema fundamental de la legibilidad**: "El código debe escribirse de manera que se minimice el tiempo que le llevaría a otra persona entenderlo."
 
-Más fácil de comprobar y mantener.
+(Traducido) The Art of Readable Code, Dustin Boswell y Trevor Foucher.
+
+. . .
 
 Necesidad de mantenimiento del código y de tus conocimientos.
 
