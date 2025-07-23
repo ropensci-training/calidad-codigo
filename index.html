@@ -200,7 +200,7 @@
 </div>
 <div class="absolute" style="font-size:1.2em; padding: 0.5em 1em; background-color: rgba(255, 255, 255, .8);left: 5%; bottom: 5%; ">
 <p>Maëlle Salmón</p>
-<p><a href="https://rome-git.netlify.app/" class="uri">https://rome-git.netlify.app/</a></p>
+<p><a href="https://codigo-hermoso.netlify.app/" class="uri">https://codigo-hermoso.netlify.app/</a></p>
 </div>
 <aside class="notes">
 <p>Cogs <a href="https://www.pexels.com/photo/colorful-toothed-wheels-171198/" class="uri">https://www.pexels.com/photo/colorful-toothed-wheels-171198/</a></p>
@@ -357,7 +357,9 @@
 <h2>Código no demasiado largo: ¡no reinventes la rueda!</h2>
 <p>Por ejemplo: <code>setdiff()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">setdiff</span>(vector1, vector2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
+<span id="cb7-2"><a href=""></a>vector2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"c"</span>)</span>
+<span id="cb7-3"><a href=""></a><span class="fu">setdiff</span>(vector1, vector2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a"</code></pre>
 </div>
@@ -384,7 +386,7 @@
 <span id="cb9-5"><a href=""></a>  <span class="fu">mutate</span>(</span>
 <span id="cb9-6"><a href=""></a>    <span class="co"># add mass2 as double of mass</span></span>
 <span id="cb9-7"><a href=""></a>    <span class="at">mass2 =</span> mass <span class="sc">*</span> <span class="dv">2</span>,</span>
-<span id="cb9-8"><a href=""></a>    <span class="co"># add mass2_squareed as squared mass2</span></span>
+<span id="cb9-8"><a href=""></a>    <span class="co"># add mass2_squared as squared mass2</span></span>
 <span id="cb9-9"><a href=""></a>    <span class="at">mass2_squared =</span> mass2 <span class="sc">*</span> mass2</span>
 <span id="cb9-10"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -396,7 +398,7 @@
 <p>Si hay demasiados, dejamos de leerlos.</p>
 </section>
 <section class="slide level2">
-<h2>¿Te apetece añadir un comentario? ¡Cuídate!</h2>
+<h2>¿Comentario o no?</h2>
 <div>
 <ul>
 <li class="fragment"><p>Cambia el nombre de una variable en lugar de comentar lo que es.</p></li>
@@ -429,7 +431,7 @@
 <h2>Buenos comentarios</h2>
 <div>
 <ul>
-<li class="fragment"><p>Documentar funciones con roxygen2 ;</p></li>
+<li class="fragment"><p>Documentar funciones con roxygen2 (y <a href="https://github.com/moodymudskipper/devtag">devtag</a>);</p></li>
 <li class="fragment"><p>Cosas que te gustaría señalar a un revisor de código, como por ejemplo <code># This query can not be done via GraphQL, so have to use v3 REST API</code></p></li>
 <li class="fragment"><p>Comentarios que proporcionen un índice. Demostración.</p></li>
 </ul>
@@ -521,7 +523,12 @@
 <h2>Lógica simplificadora: <code>switch()</code></h2>
 <p>¡Mejor!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="cf">switch</span>(type, <span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">median =</span> <span class="fu">median</span>(x), <span class="at">trimmed =</span> <span class="fu">mean</span>(x, <span class="at">trim =</span> .<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="cf">switch</span>(</span>
+<span id="cb16-2"><a href=""></a>    type, </span>
+<span id="cb16-3"><a href=""></a>    <span class="at">mean =</span> <span class="fu">mean</span>(x), </span>
+<span id="cb16-4"><a href=""></a>    <span class="at">median =</span> <span class="fu">median</span>(x), </span>
+<span id="cb16-5"><a href=""></a>    <span class="at">trimmed =</span> <span class="fu">mean</span>(x, <span class="at">trim =</span> .<span class="dv">1</span>)</span>
+<span id="cb16-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Incluso puedes especificar un valor por defecto (¡o error!) para otros valores del primer argumento.</p>
 </section>
@@ -545,7 +552,7 @@
 <div>
 <ul>
 <li class="fragment"><p>Limpieza de primavera ;</p></li>
-<li class="fragment"><p>lintr ;</p></li>
+<li class="fragment"><p><a href="https://lintr.r-lib.org/">lintr</a> y <a href="https://flir.etiennebacher.com/">flir</a> ;</p></li>
 <li class="fragment"><p>Revisión humana.</p></li>
 </ul>
 </div>
@@ -564,29 +571,34 @@
 <p><a href="https://lintr.r-lib.org/reference/index.html" class="uri">https://lintr.r-lib.org/reference/index.html</a></p>
 </section>
 <section class="slide level2">
+<h2>flir, otro paquete fantástico</h2>
+<p>¡Puede hacer cambios!</p>
+<p><a href="https://flir.etiennebacher.com/" class="uri">https://flir.etiennebacher.com/</a></p>
+</section>
+<section class="slide level2">
 <h2>Revisión humana</h2>
-<p>¡Lee el código de tus colegas y viceversa! <a href="https://code-review.tidyverse.org/" class="uri">https://code-review.tidyverse.org/</a></p>
+<p>¡Lee el código de tus colegas y viceversa! <a href="https://code-review.tidyverse.org/" class="uri">https://code-review.tidyverse.org/</a> + <a href="https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1" class="uri">https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1</a></p>
 <p>Revisión por pares de paquetes en rOpenSci <a href="https://ropensci.org/software-review/" class="uri">https://ropensci.org/software-review/</a></p>
 </section>
 <section class="slide level2">
 <h2>Conclusión</h2>
 <p>La belleza y la claridad del código son tan importantes como su rendimiento.</p>
-<p>Más fácil de comprobar y mantener</p>
-<p>Necesidad de conservación y mantenimiento.</p>
+<p>Más fácil de comprobar y mantener.</p>
+<p>Necesidad de mantenimiento del código y de tus conocimientos.</p>
 </section>
 <section class="slide level2">
 <h2>Referencias / recursos adicionales</h2>
 <ul>
-<li><p>Charla de Jenny Bryan <a href="https://github.com/jennybc/code-smells-and-feels">El código huele y se siente</a></p></li>
-<li><p>Reserva <a href="https://www.oreilly.com/library/view/the-art-of/9781449318482/">El arte del código legible</a> de Dustin Boswell y Trevor Foucher</p></li>
-<li><p>Libro <a href="https://tidydesign.substack.com/">Tidy Design de Hadley Wickham, en curso, con boletín asociado</a></p></li>
-<li><p>Libro <a href="https://masalmon.eu/2023/10/19/reading-notes-philosophy-software-design/">Una Filosofía del Diseño de Software por John Ousterhout</a></p></li>
+<li><p>Charla de Jenny Bryan <a href="https://github.com/jennybc/code-smells-and-feels">Code feels, code smells</a></p></li>
+<li><p>Libro <a href="https://www.oreilly.com/library/view/the-art-of/9781449318482/">The Art of Readable Code</a> de Dustin Boswell y Trevor Foucher</p></li>
+<li><p>Libro <a href="https://design.tidyverse.org/">Tidy Design de Hadley Wickham</a></p></li>
+<li><p>Libro <a href="https://masalmon.eu/2023/10/19/reading-notes-philosophy-software-design/">A philosophy of software design por John Ousterhout</a></p></li>
 </ul>
 </section>
 <section class="slide level2">
 <h2>¡Muchas gracias!</h2>
 <p>¡A tod@s vosotr@s y a Yani!</p>
-<p><a href="https://stylish-code.netlify.app/" class="uri">https://stylish-code.netlify.app/</a></p>
+<p><a href="https://codigo-hermoso.netlify.app/" class="uri">https://codigo-hermoso.netlify.app/</a></p>
 <div style="display:grid; margin-top: 3rem;"><figure>
     <img src="1887992.jpeg" alt="Thank you" width="300"> <figcaption>
             <p>Picture by <a href="https://www.pexels.com/photo/yellow-letter-tiles-on-blue-background-1887992/">Ann H on Pexels</a>.</p>

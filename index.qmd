@@ -46,7 +46,7 @@ get_pic <- function(id, alt, width) {
 ::: {.absolute left="5%" bottom="5%"  style="font-size:1.2em; padding: 0.5em 1em; background-color: rgba(255, 255, 255, .8);"}
 Maëlle Salmón
 
-<https://rome-git.netlify.app/>
+<https://codigo-hermoso.netlify.app/>
 :::
 
 ::: {.notes}
@@ -479,7 +479,7 @@ Necesidad de mantenimiento del código y de tus conocimientos.
 
 ¡A tod@s vosotr@s y a Yani!
 
-<https://stylish-code.netlify.app/>
+<https://codigo-hermoso.netlify.app/>
 
 ```{r merci}
 #| results: "asis"
