@@ -224,13 +224,13 @@
 <p>(Traducido) The Art of Readable Code, Dustin Boswell y Trevor Foucher.</p>
 </section>
 <section class="slide level2">
-<h2>Código bien proporcionado</h2>
+<h2>Código con las proporciones adecuadas</h2>
 <div>
 <ul>
 <li class="fragment"><p>Espaciado regular entre elementos</p></li>
-<li class="fragment"><p>No demasiado ancho</p></li>
-<li class="fragment"><p>No demasiado largo: párrafos, funciones que existan o que creaste</p></li>
-<li class="fragment"><p>No demasiado manchado: la cantidad justa de comentarios</p></li>
+<li class="fragment"><p>Que no sea muy ancho</p></li>
+<li class="fragment"><p>Que no sea muy largo: párrafos, funciones que existan o que creaste</p></li>
+<li class="fragment"><p>Que no sea muy “manchado”: la cantidad justa de comentarios</p></li>
 </ul>
 </div>
 </section>
@@ -260,7 +260,7 @@
 </section>
 <section class="slide level2">
 <h2>Espaciado regular</h2>
-<p>Sigue las normas, siempre las mismas normas, las mismas que tus amigos. Por ejemplo: <a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a> ¿Cómo lo haces?</p>
+<p>Sigue las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a> ¿Cómo lo haces?</p>
 <div>
 <ul>
 <li class="fragment"><p>Te acostumbras.</p></li>
@@ -291,7 +291,7 @@
 <a href="https://www.tidyverse.org/blog/2025/06/air-0-7-0/#github-action" class="uri">https://www.tidyverse.org/blog/2025/06/air-0-7-0/#github-action</a></p>
 </section>
 <section class="slide level2">
-<h2>No demasiado ancha</h2>
+<h2>No muy ancho</h2>
 <p>No más de 80 caracteres por línea, o algo similar.</p>
 <div>
 <ul>
@@ -302,7 +302,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Código no demasiado largo: párrafos</h2>
+<h2>Código no muy largo: párrafos</h2>
 <p>Como en la prosa, un párrafo para una idea.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>cabeza <span class="ot">&lt;-</span> <span class="fu">obtener_metadatos</span>(sitio)</span>
@@ -313,8 +313,8 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Código no demasiado largo: funciones</h2>
-<p>Mantén el cuerpo de la función principal no demasiado largo subcontratando cosas a funciones bien nombradas.</p>
+<h2>Código no muy largo: funciones</h2>
+<p>Mantén el cuerpo de la función principal no demasiado largo delegando cosas a funciones con nombres adecuados.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>arma_contenido <span class="ot">&lt;-</span> <span class="cf">function</span>(sitio) {</span>
 <span id="cb4-2"><a href=""></a>  titulo <span class="ot">&lt;-</span> <span class="fu">crea_titulo</span>(sitio)</span>
@@ -340,7 +340,7 @@
 </ul>
 </section>
 <section class="slide level2">
-<h2>Código no demasiado largo: ¡no reinventes la rueda!</h2>
+<h2>Código no muy largo: ¡no reinventes la rueda!</h2>
 <p><span class="emoji" data-emoji="raised_eyebrow">🤨</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
@@ -352,7 +352,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Código no demasiado largo: ¡no reinventes la rueda!</h2>
+<h2>Código no muy largo: ¡no reinventes la rueda!</h2>
 <p><span class="emoji" data-emoji="grin">😁</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
@@ -368,7 +368,7 @@
 <div>
 <ul>
 <li class="fragment">Lee el código de otras personas ;</li>
-<li class="fragment">Pide a otros que lean tu código;</li>
+<li class="fragment">Pide a otras personas que lean tu código;</li>
 <li class="fragment">¡Comparte tus aprendizajes! <a href="https://masalmon.eu/tags/useful-functions/" class="uri">https://masalmon.eu/tags/useful-functions/</a></li>
 </ul>
 </div>
@@ -423,7 +423,7 @@
 <span id="cb11-3"><a href=""></a>  <span class="fu">use_string</span>(x)</span>
 <span id="cb11-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Es posible definir un <em>función</em> en lugar de una variable, si es necesario.</p>
+<p>Es posible definir una <em>función</em> en lugar de una variable, si es necesario.</p>
 </section>
 <section class="slide level2">
 <h2>Buenos comentarios</h2>
@@ -436,12 +436,12 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Código bien proporcionado</h2>
+<h2>Código con proporciones adecuadas</h2>
 <ul>
 <li><p>Espaciado uniforme entre elementos</p></li>
-<li><p>No demasiado ancho</p></li>
-<li><p>No demasiado largo: párrafos, funciones externas o internas</p></li>
-<li><p>No demasiado manchado: la cantidad justa de comentarios</p></li>
+<li><p>No muy ancho</p></li>
+<li><p>No muy largo: párrafos, funciones externas o internas</p></li>
+<li><p>Sin muchas “manchas”: la cantidad justa de comentarios</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -449,7 +449,7 @@
 <div>
 <ul>
 <li class="fragment"><p>Nombres autoexplicativos.</p></li>
-<li class="fragment"><p>Consejos de lógica: temprano <code>return()</code>, <code>switch()</code>.</p></li>
+<li class="fragment"><p>Consejos de lógica: usa <code>return()</code> pronto, <code>switch()</code>.</p></li>
 <li class="fragment"><p>Menos código.</p></li>
 </ul>
 </div>
@@ -479,7 +479,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Simplificar la lógica: temprano <code>return()</code></h2>
+<h2>Simplificar la lógica: usar <code>return()</code> pronto</h2>
 <p>Meh</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>do_thing <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
@@ -492,7 +492,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Lógica simplificadora: temprano <code>return()</code></h2>
+<h2>Simplificar la lógica: usar <code>return()</code> pronto</h2>
 <p>¡Mejor!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>do_thing <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
@@ -518,7 +518,7 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Lógica simplificadora: <code>switch()</code></h2>
+<h2>Simplificando la lógica: <code>switch()</code></h2>
 <p>¡Mejor!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="cf">switch</span>(</span>
@@ -533,7 +533,7 @@
 <section class="slide level2">
 <h2>¡Menos código, menos problemas!</h2>
 <ul>
-<li><p>Sé estricto con el alcance.</p></li>
+<li><p>Mantén acotado el alcance de forma estricta.</p></li>
 <li><p>Utiliza dependencias externas de confianza.</p></li>
 </ul>
 </section>
@@ -541,7 +541,7 @@
 <h2>Código claro</h2>
 <ul>
 <li><p>Nombres autoexplicativos.</p></li>
-<li><p>Consejos de lógica: <code>return()</code> pronto, <code>switch()</code>.</p></li>
+<li><p>Consejos de lógica: usar <code>return()</code> pronto, <code>switch()</code>.</p></li>
 <li><p>Menos código.</p></li>
 </ul>
 </section>
@@ -565,7 +565,7 @@
 </section>
 <section class="slide level2">
 <h2>lintr, un paquete fantástico</h2>
-<p>¡Echemos un vistazo a la documentación!</p>
+<p>¡Miremos la documentación!</p>
 <p><a href="https://lintr.r-lib.org/reference/index.html" class="uri">https://lintr.r-lib.org/reference/index.html</a></p>
 </section>
 <section class="slide level2">
