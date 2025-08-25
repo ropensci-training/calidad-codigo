@@ -44,7 +44,7 @@ get_pic <- function(id, alt, width) {
 :::
 
 ::: {.absolute left="5%" bottom="5%"  style="font-size:1.2em; padding: 0.5em 1em; background-color: rgba(255, 255, 255, .8);"}
-Maëlle Salmón
+Maëlle Salmon
 
 <https://codigo-hermoso.netlify.app/>
 :::
@@ -103,11 +103,11 @@ starwars %>%
 
 ## Espaciado regular
 
-Sigue las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo haces?
+Seguí las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo hacés?
 
 ::: {.incremental}
 
-- Te acostumbras.
+- Te acostumbrás.
 
 - La herramienta Air!
 
@@ -217,9 +217,9 @@ setdiff(vector1, vector2)
 
 ::: {.incremental}
 
-- Lee el código de otras personas ;
-- Pide a otras personas que lean tu código;
-- ¡Comparte tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
+- Leé el código de otras personas ;
+- Pedí a otras personas que lean tu código;
+- ¡Compartí tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
 
 :::
 
@@ -252,9 +252,9 @@ Si hay demasiados, dejamos de leerlos.
 
 ::: {.incremental}
 
-- Cambia el nombre de una variable en lugar de comentar lo que es.
+- Cambiá el nombre de una variable en lugar de comentar lo que es.
 
-- Cambia la estructura de un código complicado en lugar de comentar lo que hace.
+- Cambiá la estructura de un código complicado en lugar de comentar lo que hace.
 
 :::
 
@@ -320,7 +320,7 @@ Es posible definir una *función* en lugar de una variable, si es necesario.
 
 ::: {.incremental}
 
-- Sigue la moda.
+- Seguí la moda.
 
 - Felienne Hermans aconseja elegir los conceptos que van en el nombre, las palabras para decirlo, y luego juntarlos.
 
@@ -332,7 +332,7 @@ Es posible definir una *función* en lugar de una variable, si es necesario.
 
 ## Renombrar funciones
 
-Incluso puedes cambiar el nombre de las funciones existentes si eso aclara las cosas.
+Incluso podés cambiar el nombre de las funciones existentes si eso aclara las cosas.
 
 ```{r, eval=FALSE, echo=TRUE}
 # In utils.R
@@ -399,13 +399,13 @@ switch(
 )
 ```
 
-Incluso puedes especificar un valor por defecto (¡o error!) para otros valores del primer argumento.
+Incluso podés especificar un valor por defecto (¡o error!) para otros valores del primer argumento.
 
 ## ¡Menos código, menos problemas!
 
 - Mantén acotado el alcance de forma estricta.
 
-- Utiliza dependencias externas de confianza.
+- Utilizá dependencias externas de confianza.
 
 ## Código claro
 
@@ -451,7 +451,7 @@ Incluso puedes especificar un valor por defecto (¡o error!) para otros valores 
 
 . . .
 
-¡Lee el código de tus colegas y viceversa! <https://code-review.tidyverse.org/> + <https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1>
+¡Leé el código de tus colegas y viceversa! <https://code-review.tidyverse.org/> + <https://developer-success-lab.gitbook.io/code-review-anxiety-workbook-1>
 
 . . .
 
