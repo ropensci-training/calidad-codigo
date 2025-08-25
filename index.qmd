@@ -59,17 +59,17 @@ Cogs <https://www.pexels.com/photo/colorful-toothed-wheels-171198/>
 
 (Traducido) The Art of Readable Code, Dustin Boswell y Trevor Foucher.
 
-## Código bien proporcionado
+## Código con las proporciones adecuadas
 
 ::: {.incremental}
 
 - Espaciado regular entre elementos
 
-- No demasiado ancho
+- Que no sea muy ancho
 
-- No demasiado largo: párrafos, funciones que existan o que creaste
+- Que no sea muy largo: párrafos, funciones que existan o que creaste
 
-- No demasiado manchado: la cantidad justa de comentarios
+- Que no sea muy "manchado": la cantidad justa de comentarios
 
 :::
 
@@ -103,7 +103,7 @@ starwars %>%
 
 ## Espaciado regular
 
-Sigue las normas, siempre las mismas normas, las mismas que tus amigos. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo haces?
+Sigue las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo haces?
 
 ::: {.incremental}
 
@@ -139,7 +139,7 @@ Se usa en Positron o RStudio IDE o la CLI o en GitHub Actions o...
 :blue_heart: Sugerencias en PRs.                                                
 <https://www.tidyverse.org/blog/2025/06/air-0-7-0/#github-action>
 
-## No demasiado ancha
+## No muy ancho
 
 No más de 80 caracteres por línea, o algo similar.
 
@@ -151,7 +151,7 @@ No más de 80 caracteres por línea, o algo similar.
 
 :::
 
-## Código no demasiado largo: párrafos
+## Código no muy largo: párrafos
 
 Como en la prosa, un párrafo para una idea.
 
@@ -163,9 +163,9 @@ cuerpo <- arma_contenido(sitio)
 cuerpo_texto <- textea(cuerpo)
 ```
 
-## Código no demasiado largo: funciones
+## Código no muy largo: funciones
 
-Mantén el cuerpo de la función principal no demasiado largo subcontratando cosas a funciones bien nombradas.
+Mantén el cuerpo de la función principal no demasiado largo delegando cosas a funciones con nombres adecuados.
 
 ```{r, eval=FALSE, echo=TRUE}
 arma_contenido <- function(sitio) {
@@ -193,7 +193,7 @@ Demostración
 
 - Barra de búsqueda
 
-## Código no demasiado largo: ¡no reinventes la rueda!
+## Código no muy largo: ¡no reinventes la rueda!
 
 :raised_eyebrow:
 
@@ -203,7 +203,7 @@ vector2 <- c("b", "c")
 vector1[!(vector1 %in% vector2)]
 ```
 
-## Código no demasiado largo: ¡no reinventes la rueda!
+## Código no muy largo: ¡no reinventes la rueda!
 
 :grin:
 
@@ -218,7 +218,7 @@ setdiff(vector1, vector2)
 ::: {.incremental}
 
 - Lee el código de otras personas ;
-- Pide a otros que lean tu código;
+- Pide a otras personas que lean tu código;
 - ¡Comparte tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
 
 :::
@@ -280,7 +280,7 @@ if (x_is_not_empty_string) {
 }
 ```
 
-Es posible definir un *función* en lugar de una variable, si es necesario.
+Es posible definir una *función* en lugar de una variable, si es necesario.
 
 ## Buenos comentarios
 
@@ -294,15 +294,15 @@ Es posible definir un *función* en lugar de una variable, si es necesario.
 
 :::
 
-## Código bien proporcionado
+## Código con proporciones adecuadas
 
 - Espaciado uniforme entre elementos
 
-- No demasiado ancho
+- No muy ancho
 
-- No demasiado largo: párrafos, funciones externas o internas
+- No muy largo: párrafos, funciones externas o internas
 
-- No demasiado manchado: la cantidad justa de comentarios
+- Sin muchas "manchas": la cantidad justa de comentarios
 
 ## Código claro
 
@@ -310,7 +310,7 @@ Es posible definir un *función* en lugar de una variable, si es necesario.
 
 - Nombres autoexplicativos.
 
-- Consejos de lógica: temprano `return()`, `switch()`.
+- Consejos de lógica: usa `return()` pronto, `switch()`.
 
 - Menos código.
 
@@ -344,7 +344,7 @@ remove_extension <- function(path) {
 remove_extension(path)
 ```
 
-## Simplificar la lógica: temprano `return()`
+## Simplificar la lógica: usar `return()` pronto
 
 Meh
 
@@ -358,7 +358,7 @@ do_thing <- function(x) {
 }
 ```
 
-## Lógica simplificadora: temprano `return()`
+## Simplificar la lógica: usar `return()` pronto
 
 ¡Mejor!
 
@@ -386,7 +386,7 @@ if (type == "mean") {
 }
 ```
 
-## Lógica simplificadora: `switch()`
+## Simplificando la lógica: `switch()`
 
 ¡Mejor!
 
@@ -403,7 +403,7 @@ Incluso puedes especificar un valor por defecto (¡o error!) para otros valores 
 
 ## ¡Menos código, menos problemas!
 
-- Sé estricto con el alcance.
+- Mantén acotado el alcance de forma estricta.
 
 - Utiliza dependencias externas de confianza.
 
@@ -411,7 +411,7 @@ Incluso puedes especificar un valor por defecto (¡o error!) para otros valores 
 
 - Nombres autoexplicativos.
 
-- Consejos de lógica: `return()` pronto, `switch()`.
+- Consejos de lógica: usar `return()` pronto, `switch()`.
 
 - Menos código.
 
@@ -437,7 +437,7 @@ Incluso puedes especificar un valor por defecto (¡o error!) para otros valores 
 
 ## lintr, un paquete fantástico
 
-¡Echemos un vistazo a la documentación!
+¡Miremos la documentación!
 
 <https://lintr.r-lib.org/reference/index.html>
 
