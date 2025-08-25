@@ -103,7 +103,7 @@ starwars %>%
 
 ## Espaciado regular
 
-Seguis las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo hacés?
+Seguí las normas, siempre las mismas normas, las mismas que siguen tus amigos y amigas. Por ejemplo: <https://style.tidyverse.org/> ¿Cómo lo hacés?
 
 ::: {.incremental}
 
@@ -219,7 +219,7 @@ setdiff(vector1, vector2)
 
 - Leé el código de otras personas ;
 - Pedí a otras personas que lean tu código;
-- ¡Comparté tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
+- ¡Compartí tus aprendizajes! <https://masalmon.eu/tags/useful-functions/>
 
 :::
 
@@ -320,7 +320,7 @@ Es posible definir una *función* en lugar de una variable, si es necesario.
 
 ::: {.incremental}
 
-- Seguis la moda.
+- Seguí la moda.
 
 - Felienne Hermans aconseja elegir los conceptos que van en el nombre, las palabras para decirlo, y luego juntarlos.
 
