@@ -191,7 +191,7 @@ Demostración
 
 - Entrar + clic
 
-- Barra de búsqueda
+- Ctrl +T+ T
 
 ## Código no muy largo: ¡no reinventes la rueda!
 
