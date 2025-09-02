@@ -191,7 +191,7 @@ Demostración
 
 - Entrar + clic
 
-- Ctrl +T+ T
+- Ctrl + T (o Ctrl + P si `"search.quickOpen.includeSymbols": true` en `settings.json`)
 
 ## Código no muy largo: ¡no reinventes la rueda!
 
